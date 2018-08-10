@@ -16,17 +16,16 @@ module.exports = {
     	{ text: 'Python', link: '/python/'},
     	{ text: 'Business Analytics', link: '/ba/'},
       	{
-        	text: 'Links',
+        	text: 'Others',
         	items: [
-        		{ text: 'Others', items: [
-        		  { text: 'Gemstones', link: '/gems/' },
-              { text: 'Shadowsocks', link: '/p/ss' },
-              { text: 'About', link: '/about/'}
+        		{ text: '', items: [
+        		  { text: 'Other Notes', link: '/other/' },
+              { text: 'About me', link: '/about/'}
      				] 
      			},
      			{ text: 'External', items: [
-        			{ text: '热带鱼', link: 'https://www.51redaiyu.com' },
-     				{ text: '爱鱼客', link: 'http://www.iyu.co' }
+        	    { text: '热带鱼', link: 'https://www.51redaiyu.com' },
+     			    { text: '爱鱼客', link: 'http://www.iyu.co' }
      				] 
      			}
         	]

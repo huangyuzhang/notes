@@ -1,10 +1,10 @@
 ---
-title: Syntax
+title: JavaScript Syntax
 sidebar: auto
 sidebarDepth: 2
 footer: Copyright © 2018 Yuzhang Huang
 ---
-# Syntax
+# JavaScript Syntax
 ::: tip Description
 Basic Javascript Syntax Notes
 :::

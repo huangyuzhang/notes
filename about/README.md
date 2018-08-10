@@ -1,6 +1,7 @@
 ---
 title: About me
-sidebar: true
+sidebar: auto
+sidebarDepth: 2
 footer: Copyright © 2018 Yuzhang Huang
 ---
 # About
