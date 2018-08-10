@@ -27,6 +27,11 @@ git status -s
 git checkout <branch>
 ```
 ## git 远程服务器配置及连接
+由于 GitHub 的私有仓库收收费的，而如果我们并不想要开源当前的项目，我们就可以通过以下方法在服务器上建立一个私有的 git 仓库。
+
+以本地编写的网站项目为例，以下教程将展示如何为现有项目创建 git 仓库，并推送至远程服务器的 git 仓库，最后再网站服务器下载存储在远程 git 仓库的网站项目。
+
+（远程仓库和网站服务器不需要是同一台服务器）
 ### 远程 git 仓库创建
 通过 ssh 连接服务器，假设已经有一个统一存放 git 库的父文件夹，位于`/home/git`，在其中为项目`myweb`创建一个 git 仓库 `myweb.git`。
 
@@ -42,6 +47,16 @@ $ git init --bare
 
 `git init --bare`命令直接将当前文件夹创建为 git 仓库，不会创建`.git`文件夹。
 :::
+#### 远程服务器允许接受push请求
+``` bash
+$ cd .git
+$ vi config
+```
+添加一下代码：
+```
+[receive]
+	denyCurrentBranch = ignore
+```
 ### 本地 git 仓库创建
 进入项目所在根目录，初始化 git 仓库。
 ``` bash
@@ -79,9 +94,26 @@ git remote
 ``` bash
 git push <项目别名> master
 ```
-### 网站目录pull项目
+### 网站服务器`pull`项目
 之后我们进入网站所在根目录，以将存放在git仓库`home/git/myweb.git`的项目`pull`到网站服务器目录`/home/www/myweb.com`为例：
 ``` bash
 $ cd /home/www/myweb.com
 $ git pull myweb master
 ```
+至此，我们就成功的将本地的项目存放到远程服务器的git仓库，并在远程服务器成功获取存放在git仓库中的项目。
+### 流程化操作
+日后即可按照以下操作快速将本地网站同步到网站服务器，以 vuepress 为例：
+``` bash
+# 本地项目编辑完成
+vuepress build . # vuepress 编译
+git add . # stage 编译的文件
+git commit -m "操作记录" # 提交修改并记录
+git push myweb master # push 到远程 git 服务器
+```
+``` bash
+# 网站服务器
+$ cd /home/myweb.com # 进入网页服务器项目页面
+$ git pull myweb master # 从远程 git 服务器 pull 项目文件
+```
+### 附录
+Gogs提供类似于 GitHub 的开源服务，并且易于部署，项目地址：[Gogs：一款极易搭建的自助 Git 服务](https://gogs.io/)
