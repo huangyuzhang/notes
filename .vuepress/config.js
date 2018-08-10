@@ -20,7 +20,7 @@ module.exports = {
         	items: [
         		{ text: 'Others', items: [
         		  { text: 'Gemstones', link: '/gems/' },
-              { text: 'Shadowsocks', link: '/p/10' },
+              { text: 'Shadowsocks', link: '/p/ss' },
               { text: 'About', link: '/about/'}
      				] 
      			},
