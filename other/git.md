@@ -17,10 +17,10 @@ $ yum install git
 ```
 ## git 操作指令
 ``` bash
-# git 状态
+# git 状态（完整版）
 git status
 
-# git 状态
+# git 状态（简单版）
 git status -s
 
 # git 进入到指定分制
@@ -77,17 +77,22 @@ git remote add <name> <url>
 ```
 如
 ``` bash
-git remote add myweb ssh://ipaddress/path/myweb.git>
+git remote add myweb ssh://ip.address:port/path/myweb.git>
 ```
 日后当需要连接到该服务器下的`myweb`git仓库时，只需要通过别名即可快速调用，如：
 ``` bash
 git push myweb master
 # 等同于
-git push ssh://ipaddress/path/myweb.git master
+git push ssh://ip.address:port/path/myweb.git master
 ```
 查看该git仓库中已经保存的别名：
 ``` bash
 git remote
+```
+
+删除别名 `abc`：
+``` bash
+git remote rm abc
 ```
 :::
 将项目`push`推送到远程服务器中指定的 git 仓库（项目别名设置参考上方提示）：
