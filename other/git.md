@@ -9,7 +9,7 @@ footer: Copyright © 2018 Yuzhang Huang
 远程服务器命令前有符号“$”，本地服务器则没有
 :::
 ## git 服务安装
-下载git服务：[git官网](https://git-scm.com/downloads)
+下载git服务：[git官网](https://git-scm.com/downloads "下载git")
 
 网站会自动检测你的操作系统匹配的版本，下载后按照引导进行安装即可；Linux系统通过命令行进行安装，如：
 ``` bash
