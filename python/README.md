@@ -1,7 +1,9 @@
 ---
+sidebar: true
 footer: Copyright © 2018 Yuzhang Huang
 ---
 
-# Notes for Python
+# Introduction
 Personal Python Learning Notes
+
 

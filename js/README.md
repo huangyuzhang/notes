@@ -3,10 +3,7 @@ sidebar: true
 footer: Copyright © 2018 Yuzhang Huang
 ---
 
-# Notes for JavaScript
+# Introduction
 Personal JavaScript Learning Notes
-
-## [Syntax](./syntax.html)
-Basic JavaScript syntax.
 
 

@@ -3,18 +3,18 @@ module.exports = {
 	title: 'Yuzhang\'s Notes',
   	description: 'Yuzhang Huang\'s personal online notebook',
   	markdown: {
-    lineNumbers: true // 代码块显示行标
+    lineNumbers: true, // 代码块显示行标
+    displayAllHeaders: true, // 默认值：false
   },
   	themeConfig: {
   	// navbar: false,
  		lastUpdated: 'Last Updated', // string | boolean
-  		displayAllHeaders: true, // 默认值：false
   	/* navigation start */
     nav: [
     	{ text: 'Home', link: '/' },
     	{ text: 'JavaScript', link: '/js/'},
     	{ text: 'Python', link: '/python/'},
-    	{ text: 'Business Analytics', link: '/ba/'},
+    	{ text: 'BA', link: '/ba/'},
       	{
         	text: 'Others',
         	items: [
@@ -29,56 +29,124 @@ module.exports = {
      				] 
      			}
         	]
-      	} 
+      	}
     ],
     /* navigation end */
 
-    /* sidebar satrt */
+    /* sidebar start*/
     sidebar: {
-      '/note': [
-        {
-          title:'前端',
-          collapsable: true,
-          children:[
-            '/notes/frontEnd/VueJS组件编码规范',
-            '/notes/frontEnd/vue-cli脚手架快速搭建项目',
-            '/notes/frontEnd/深入理解vue中的slot与slot-scope',
-            '/notes/frontEnd/webpack入门',
-            '/notes/frontEnd/PWA介绍及快速上手搭建一个PWA应用',
-          ]
-        },
-        {
-          title:'后端',
-          collapsable: true,
-          children:[
-            'notes/backEnd/nginx入门',
-            'notes/backEnd/CentOS如何挂载磁盘',
-          ]
-        },
-      ],
-    },
-    /* sidebar end */
-
+          '/ba/data-analytics/': sidebarDA('Data Analytics'),
+          '/ba/': sidebarBA('Business Analytics'),
+          '/python/': sidebarPython('Python'),
+          '/js/': sidebarJS('JavaScript'),
+          '/other/': sidebarOther('Other Notes'),
+          '/sample/': sampleSidebar('Sample Sidebar'),
+    }
+    /* sidebar end*/
   }
 }
 
 
-function genSidebarConfig (title) {
+function sidebarDA(title) {
+return [
+      ['', 'Data Analytics'], // first item
+      {
+        title: 'Lecture Notes',
+        collapsable: false,
+        children: [
+          'ch1',
+          'ch2',
+        ]
+      },
+      {
+        title: 'Problem Sets',
+        collapsable: false,
+        children: [
+          'ps1',
+          'ps2',
+        ]
+      },
+      ['appendix','Appendix']
+    ]
+}
+
+function sidebarBA (title) {
   return [
     {
       title,
       collapsable: false,
       children: [
         '',
-        'getting-started',
-        'basic-config',
-        'assets',
-        'markdown',
-        'using-vue',
-        'custom-themes',
-        'i18n',
-        'deploy'
+        'data-analytics/',
+        'strategic-analysis/',
+        'programming-for-business-analytics/',
       ]
     }
   ]
+}
+
+function sidebarPython (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'syntax',
+      ]
+    }
+  ]
+}
+
+function sidebarJS (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'syntax',
+      ]
+    }
+  ]
+}
+
+function sidebarOther (title) {
+  return [
+    {
+      title,
+      collapsable: false,
+      children: [
+        '',
+        'tolearn',
+      ]
+    }
+  ]
+}
+
+
+
+
+function sampleSidebar(title) {
+return [
+      ['', 'Introduction'],
+      {
+        title: 'Chapter 1',
+        collapsable: false,
+        children: [
+          'ch1/',
+          'ch1/topic1',
+          'ch1/topic2',
+        ]
+      },
+      {
+        title: 'Chapter 2',
+        collapsable: false,
+        children: [
+          'ch2/',
+          'ch2/topic1',
+          'ch2/topic2',
+        ]
+      }
+    ]
 }

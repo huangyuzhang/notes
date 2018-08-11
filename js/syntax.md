@@ -1,7 +1,6 @@
 ---
-title: JavaScript Syntax
-sidebar: auto
-sidebarDepth: 2
+title: Syntax
+sidebarDepth: 3
 footer: Copyright © 2018 Yuzhang Huang
 ---
 # JavaScript Syntax
