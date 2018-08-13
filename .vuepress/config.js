@@ -10,40 +10,52 @@ module.exports = {
   	// navbar: false,
  		lastUpdated: 'Last Updated', // string | boolean
   	/* navigation start */
-    nav: [
-    	{ text: 'Home', link: '/' },
-    	{ text: 'JavaScript', link: '/js/'},
-    	{ text: 'Python', link: '/python/'},
-    	{ text: 'BA', link: '/ba/'},
-      	{
-        	text: 'Others',
-        	items: [
-        		{ text: '', items: [
-        		  { text: 'Other Notes', link: '/other/' },
-              { text: 'About me', link: '/about/'}
-     				] 
-     			},
-     			{ text: 'External', items: [
-        	    { text: '热带鱼', link: 'https://www.51redaiyu.com' },
-     			    { text: '爱鱼客', link: 'http://www.iyu.co' }
-     				] 
-     			}
-        	]
-      	}
-    ],
+	    nav: [
+	    	{ text: 'Home', link: '/' },
+	    	{ text: 'JavaScript', link: '/js/'},
+	    	{ text: 'Python', link: '/python/'},
+	    	{ text: 'BA', link: '/ba/'},
+	      	{ text: 'Others',
+	        	items: [
+	        		{ text: '', items: [
+	        			{ text: 'Other Notes', link: '/other/' },
+	            		{ text: 'About me', link: '/about/'}
+	     				] 
+	     			},
+	     			{ text: 'External', items: [
+	        	    	{ text: '热带鱼', link: 'https://www.51redaiyu.com' },
+	     			    { text: '爱鱼客', link: 'http://www.iyu.co' }
+	     				] 
+	     			}
+	        	]
+	      	}
+	    ],
     /* navigation end */
 
     /* sidebar start*/
-    sidebar: {
-          '/ba/data-analytics/': sidebarDA('Data Analytics'),
-          '/ba/': sidebarBA('Business Analytics'),
-          '/python/': sidebarPython('Python'),
-          '/js/': sidebarJS('JavaScript'),
-          '/other/': sidebarOther('Other Notes'),
-          '/sample/': sampleSidebar('Sample Sidebar'),
-    }
+	    sidebar: {
+	          '/ba/data-analytics/': sidebarDA('Data Analytics'),
+	          '/ba/': sidebarBA('Business Analytics'),
+	          '/python/': sidebarPython('Python'),
+	          '/js/': sidebarJS('JavaScript'),
+	          '/other/': sidebarOther('Other Notes'),
+	          '/sample/': sampleSidebar('Sample Sidebar'),
+	    }
     /* sidebar end*/
-  }
+	},
+	/* theme config end */
+	/* markdown config start */
+	// markdown: {
+	// 	// markdown-it-anchor 的选项
+	// 	anchor: { permalink: false },
+	// 	// markdown-it-toc 的选项
+	// 	toc: { includeLevel: [1, 2] },
+	// 	config: md => {
+	// 		// 使用更多的 markdown-it 插件!
+	// 		md.use(require('markdown-it-mark'))
+	// 	}
+ //    },
+    /* markdown config end */
 }
 
 

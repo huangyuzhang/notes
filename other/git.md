@@ -7,6 +7,8 @@ footer: Copyright © 2018 Yuzhang Huang
 # git 服务器搭建及配置
 ::: tip 代码规范
 远程服务器命令前有符号“$”，本地服务器则没有
+
+git常用命令请参考: [git cheatsheet](#cheatsheet)
 :::
 ## git 服务安装
 下载git服务：[git官网](https://git-scm.com/downloads "下载git")
@@ -14,17 +16,6 @@ footer: Copyright © 2018 Yuzhang Huang
 网站会自动检测你的操作系统匹配的版本，下载后按照引导进行安装即可；Linux系统通过命令行进行安装，如：
 ``` bash
 $ yum install git
-```
-## git 操作指令
-``` bash
-# git 状态（完整版）
-git status
-
-# git 状态（简单版）
-git status -s
-
-# git 进入到指定分制
-git checkout <branch>
 ```
 ## git 远程服务器配置及连接
 由于 GitHub 的私有仓库收收费的，而如果我们并不想要开源当前的项目，我们就可以通过以下方法在服务器上建立一个私有的 git 仓库。
@@ -36,7 +27,7 @@ git checkout <branch>
 通过 ssh 连接服务器，假设已经有一个统一存放 git 库的父文件夹，位于`/home/git`，在其中为项目`myweb`创建一个 git 仓库 `myweb.git`。
 
 目录结构为 `/home/git/myweb.git`。
-``` bash
+``` bash{4}
 $ cd /home/git
 $ mkdir myweb.git
 $ cd myweb.git
@@ -73,7 +64,7 @@ git commit -m "add git"
 ::: tip 为远程服务器地址设置别名
 为远程服务器地址设置别名可以方便日后的连接。
 ``` bash
-git remote add <name> <url>
+git remote add <shortname> <url>
 ```
 如
 ``` bash
@@ -141,6 +132,27 @@ $ git stash pop
 git reset --hard
 git pull myweb master
 ```
- 
+## Cheatsheet
+``` bash
+# git 状态（完整版）
+git status
+
+# git 状态（简单版）
+git status -s
+
+# git 进入到指定分支
+git checkout <branch>
+
+# 保存远程服务器
+git remote add <shortname> <url>
+
+# 别名设置
+git config --global alias.<shortname> <original> 
+## 若使用 --global 则设置为全局别名，当前机器全局可用
+## 如果 <original> 超过一个命令，以''包含，如 'reset HEAD'
+```
+如 `remote`, `alias` 等配置内容保存在 `.git` 中的 `config` 文件中。
+
+==高亮==
 ## 附录
-Gogs提供类似于 GitHub 的开源服务，并且易于部署，项目地址：[Gogs：一款极易搭建的自助 Git 服务](https://gogs.io/)
+Gogs提供类似于 GitHub 的开源服务平台，易于部署，适合私有项目：[Gogs.io](https://gogs.io/ "访问Gogs官网")
