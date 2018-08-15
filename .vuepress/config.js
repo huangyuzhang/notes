@@ -85,14 +85,20 @@ return [
 function sidebarBA (title) {
   return [
     {
-      title,
-      collapsable: false,
-      children: [
-        '',
-        'data-analytics/',
-        'strategic-analysis/',
-        'programming-for-business-analytics/',
-      ]
+     	title: 'Business Analytics',
+     	collapsable: true,
+     	children: [
+     		'',
+     	]
+    },
+    {
+    	title: 'Couse Pages',
+    	collapsable: true,
+    	children: [
+			'data-analytics/',
+        	'strategic-analysis/',
+        	'programming-for-business-analytics/',
+    	]
     }
   ]
 }
@@ -130,6 +136,8 @@ function sidebarOther (title) {
       collapsable: false,
       children: [
         '',
+        'ss',
+        'git',
         'tolearn',
       ]
     }

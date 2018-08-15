@@ -4,6 +4,7 @@ sidebar: auto
 sidebarDepth: 2
 footer: Copyright © 2018 Yuzhang Huang
 ---
+# 科学上网安装使用教程
 ::: tip 使用前提
 以下教程仅对在 Simon 处购买的 ShadowsocksR 账号设置有效，若没有账号，请联系微信：`yulone` 购买。
 
@@ -11,7 +12,6 @@ footer: Copyright © 2018 Yuzhang Huang
 
 &nbsp;
 :::
-# 科学上网安装使用教程
 ## 一、iOS 安装教程
 ### 下载 ShadowRocket
 <img src="/img/201808/ss-ios-1.jpg" alt="ShadowRocket图标" class="appIcon">
